@@ -173,10 +173,10 @@ main() {
 	printf "\nSystem information:\n"	
 	uname -a
 	printf "\n============================================================="
-	printf "\n\nLinux Environment Maintenance Procedures  v0.1.0\n"
+	printf "\n\nDebian Environment Maintenance Procedures  v0.1.0\n"
 	printf "\nby Michel Castilho\n"
 	printf "devmichelcastilho@gmail.com\n"
-	printf "github.com/devmichelcastilho\n"
+	printf "github.com/michelcastilho\n"
 	printf "\nThis script attempts to fix many common issues by cleaning and regenerating package lists, unconfigured/unistalled packages and broken installs. You can check all attempts and their results in the log file and general information about your system on a separate file.\n"
 	printf "By proceeding, lsscsi will also be installed (if missing) in order to read sata information."
 	printf "\n============================================================="
