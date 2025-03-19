@@ -188,7 +188,7 @@ main() {
 	printf "github.com/michelcastilho\n"
 	printf "\nThis script attempts to fix many common issues by cleaning and regenerating package lists, unconfigured/unistalled packages and broken installs. You can check all attempts and their results in the log file and general information about your system on a separate file.\n"
 	
-	printf "\nBy proceeding, the following packages will be installed:\n\n"
+	printf "\nThis script relies on tools that might not be present in your system.\nBy proceeding, the following packages will be installed (if any):\n\n"
 	
 	for i in "${dependencies[@]}"
 	do
