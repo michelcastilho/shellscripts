@@ -1,5 +1,12 @@
 #! /usr/bin/bash
 
+setup() {
+
+	dependencies=("lsscsi")
+	export dependencies
+	
+}
+
 generate_logs() {
 
 	# get date and time
@@ -34,11 +41,10 @@ generate_logs() {
 }
 
 install_dependencies() {
-
-	dependencies=("lsscsi")
+	
 	printf "\nInstalling dependencies...\n"
 	
-	for i in "${dependencies}"
+	for i in "${dependencies[@]}"
 	do
 		if dpkg -s "$i" &>/dev/null; then
 			printf "\nPackage $i is present and won't be installed.\n\n"
@@ -170,6 +176,9 @@ step6() {
 }
 
 main() {
+
+	setup
+
 	printf "\nSystem information:\n"	
 	uname -a
 	printf "\n============================================================="
@@ -178,7 +187,18 @@ main() {
 	printf "devmichelcastilho@gmail.com\n"
 	printf "github.com/michelcastilho\n"
 	printf "\nThis script attempts to fix many common issues by cleaning and regenerating package lists, unconfigured/unistalled packages and broken installs. You can check all attempts and their results in the log file and general information about your system on a separate file.\n"
-	printf "By proceeding, lsscsi will also be installed (if missing) in order to read sata information."
+	
+	printf "\nBy proceeding, the following packages will be installed:\n\n"
+	
+	for i in "${dependencies[@]}"
+	do
+		if dpkg -s "$i" &>/dev/null; then
+			printf ""
+		else
+			printf "$i\n"
+		fi
+	done
+	
 	printf "\n============================================================="
 	
 	printf "\n\nScript initiated\n"
