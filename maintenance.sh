@@ -54,7 +54,7 @@ install_dependencies() {
 		fi
 	done
 	
-	printf "Dependencies OK.\n\n"
+	printf "Dependencies OK.\n"
 
 }
 
